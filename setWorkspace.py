@@ -50,8 +50,6 @@ def getClosestMatch():
 
 folderPath = getClosestMatch()
 if folderPath:
-    vscodePath = "C:\\Users\\leona\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe" # asignacion literal de path de vscode
-    subprocess.Popen([vscodePath, folderPath]) # crea un nuevo proceso en el que se ejecuta el elemento [0]
-    # y se le pasa como argumento al elemento [1] -> seria: "Ejecuta el programa encontrado en vscodePath y pásale folderPath como argumento"
+    subprocess.Popen(["code", folderPath], shell=True) # ejecuta el path en la terminal usando el comando "code", replicando una apertura manual
 else: 
     print("Not found")
